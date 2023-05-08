@@ -37,3 +37,7 @@ To use the script with APIs, you'll need to configure the API credentials in the
 ## YOUR API KEY HERE
 openai.api_key_path = ".openai_key"
 ```
+
+
+### To Dos
+- Log the result to .jsonl file for further analysis
