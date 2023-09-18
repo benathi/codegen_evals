@@ -29,7 +29,7 @@ python src/eval_gpt_mxeval.py --model_name gpt-3.5-turbo --dataset multi-humanev
 
 * Run Python HumanEval + multi-turn execution (num turns > 1 enables the execution feedback automatically)
 ```
-python src/eval_gpt_mxeval.py --model_name gpt-3.5-turbo --dataset multi-humaneval --num_shots 1 --num_turns 3 --language python --verbose 1
+python src/eval_gpt_mxeval.py --model_name gpt-3.5-turbo --dataset multi-humaneval --num_shots 1 --num_turns 3 --language python --verbose 3
 ```
 
 
