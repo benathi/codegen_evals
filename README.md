@@ -10,12 +10,28 @@ To use the script, follow these steps:
 
 * Open a terminal and navigate to the repository directory.
 
+* mxeval repo for execution in different programming languages. Currently installing directly from source is required. We will support pip installation soon.
+
+```
+# Go to a directory where you want this repo installed
+git clone https://github.com/amazon-science/mxeval.git
+cd mxeval
+pip install -e .
+```
+
+
 * Run the script followed by the desired arguments. For example, to evaluate the gpt-3.5-turbo model on the multi-humaneval dataset with num_shots=1 and num_turns=1, enter the following command:
 
 
 ```
 python src/eval_gpt_mxeval.py --model_name gpt-3.5-turbo --dataset multi-humaneval --num_shots 1 --num_turns 1
 ```
+
+* Run Python HumanEval + multi-turn execution (num turns > 1 enables the execution feedback automatically)
+```
+python src/eval_gpt_mxeval.py --model_name gpt-3.5-turbo --dataset multi-humaneval --num_shots 1 --num_turns 3 --language python --verbose 1
+```
+
 
 ### Arguments
 The script takes the following arguments:

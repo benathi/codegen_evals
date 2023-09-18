@@ -5,6 +5,7 @@ from mxeval.evaluation import (
   estimate_pass_at_k,
 )
 from mxeval.data import get_data, get_examples, get_supported_langs
+from datasets import load_dataset
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from multiprocessing.pool import ThreadPool
 import numpy as np
@@ -142,7 +143,8 @@ def eval_language(dataset="mbxp",
          k_shot=2,
          temperature=0):
   check_correctness_function = get_execute_function(language)
-  data_obj = get_data(dataset=dataset, language=language)
+  data_obj = get_data(dataset=dataset, language=language) # specific language or all
+  # TODO -- change this to huggingface loader for convenience
   fewshot_examples = get_examples(dataset="mbxp", # other datasets have similar few shot examples as mbxp
                                           language=language,
                                           num_examples=k_shot)
